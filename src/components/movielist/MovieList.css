@@ -1,0 +1,73 @@
+.movie-container {
+  margin-bottom: 30px;
+}
+
+.movie-container h2 {
+  margin: 0px 0px 0px 30px;
+}
+
+.movie-list {
+  transition: all ease 0.4s;
+}
+
+.movie-area {
+  /*Tudo que passar da tela vai ser cortado*/
+  overflow-x: hidden;
+  padding-left: 30px;
+}
+
+.movie-item {
+  /*item ao lado do outro*/
+  display: inline-block;
+  width: 150px;
+  cursor: pointer;
+}
+
+.movie-item img {
+  width: 100%;
+  /*90% da largura*/
+  transform: scale(0.9);
+  transition: all ease 0.2s;
+}
+
+.movie-item img:hover{
+  /*100% de largura*/
+  transform: scale(1);
+}
+
+.movie-left,
+.movie-right {
+  position: absolute;
+  width: 40px;
+  height: 225px;
+  background-color: #00000099;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*Tira a barra de espaço na posiçao x*/
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transition: all ease 0.2s;
+}
+
+.movie-left {
+  left: 0;
+}
+
+.movie-right {
+  right: 0;
+}
+
+.movie-container:hover .movie-left:hover,
+.movie-container:hover .movie-right:hover {
+  opacity: 1;
+}
+
+@media (max-width: 750px){
+  .movie-left,
+  .movie-right {
+    opacity: 1;
+  }
+}
